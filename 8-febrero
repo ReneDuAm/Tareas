@@ -1,0 +1,42 @@
+int rojo = 3;
+int verde = 5;
+int amar = 7;
+int y;
+int x;
+int z;
+
+void setup() {
+Serial.begin(9600);
+Serial.printnl("¿Cuanto tiempo deseas para el led rojo?");
+while (Serial.available() == 0){
+{
+y=Serial.parselnt();
+pinMode(rojo,OUTPOT);
+
+Serial.printnl("¿Cuanto tiempo deseas para el led verde?");
+while (Serial.available() == 0){
+{
+x=Serial.parselnt();
+pinMode(verde,OUTPOT);
+
+Serial.printnl("¿Cuanto tiempo deseas para el led amarillo?");
+while (Serial.available() == 0){
+{
+z=Serial.parselnt();
+pinMode(amar,OUTPOT);
+}
+
+viod loop() {
+digitalWrite(rojo,HIGH);
+delay(y);
+digitalWrite(rojo,LOW);
+delay(y);
+digitalWrite(verde,HIGH);
+delay(x);
+digitalWrite(verde,LOW);
+delay(x);
+digitalWrite(amar,HIGH);
+delay(z);
+digitalWrite(amar,LOW);
+delay(z);
+}
