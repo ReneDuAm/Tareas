@@ -1,0 +1,45 @@
+int rojo = 2;
+int verde = 4;
+int amar = 6;
+int nivelR, nivelV, nivelA;
+int = valor;
+int = brillo;
+
+void setup() {
+Serial.begin(9600);
+Serial.println("¿nivel del rojo?: ");
+while(!Serial.available()){
+}
+nivelR = Serial.parseint();
+
+Serial.println("¿nivel del verde?: ");
+while(!Serial.available()){
+}
+nivelV = Serial.parseint();
+
+Serial.println("¿nivel del amarillo?: ");
+while(!Serial.available()){
+}
+nivelA = Serial.parseint();
+
+pinMode(rojo, OUTPUT);
+pinMode(verde, OUTPUT);
+pinMode(amar, OUTPUT);
+}
+
+void loop () {
+valor = analogRead(AO);
+brillo = map(valor, 0, 1023, 0, nivelR);
+analogWrite(rojo, brillo);
+Serial.printnl(brillo);
+
+valor = analogRead(AO);
+brillo = map(valor, 0, 1023, 0, nivelV);
+analogWrite(verde, brillo);
+Serial.printnl(brillo);
+
+valor = analogRead(AO);
+brillo = map(valor, 0, 1023, 0, nivelA);
+analogWrite(amar, brillo);
+Serial.printnl(brillo);
+}
